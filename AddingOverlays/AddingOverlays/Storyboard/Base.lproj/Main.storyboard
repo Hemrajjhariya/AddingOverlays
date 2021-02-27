@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Pi-KD-SoD">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Picker View Controller-->
+        <scene sceneID="3aG-Dg-OX8">
+            <objects>
+                <viewController id="HaI-sF-Cn0" customClass="PickerViewController" customModule="Cubica" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AYJ-uc-XFO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="apl-dg-J9b">
+                                <rect key="frame" x="87.5" y="460" width="239" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C43-cT-zbx">
+                                        <rect key="frame" x="0.0" y="0.0" width="239" height="30"/>
+                                        <color key="tintColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Pick video from Photos"/>
+                                        <connections>
+                                            <action selector="pickVideoButtonTapped:" destination="HaI-sF-Cn0" eventType="touchUpInside" id="BTi-6B-0Ju"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="C43-cT-zbx" firstAttribute="centerX" secondItem="apl-dg-J9b" secondAttribute="centerX" id="81v-om-W6X"/>
+                                    <constraint firstItem="C43-cT-zbx" firstAttribute="centerY" secondItem="apl-dg-J9b" secondAttribute="centerY" id="KBl-AN-HSu"/>
+                                </constraints>
+                            </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="AaF-rw-6pT">
+                                <rect key="frame" x="188.5" y="451.5" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" name="rw-light"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vEp-xn-INc"/>
+                        <color key="backgroundColor" name="rw-dark"/>
+                        <constraints>
+                            <constraint firstItem="apl-dg-J9b" firstAttribute="leading" secondItem="vEp-xn-INc" secondAttribute="leading" constant="87.5" id="Nyz-Cr-a9f"/>
+                            <constraint firstItem="apl-dg-J9b" firstAttribute="centerY" secondItem="vEp-xn-INc" secondAttribute="centerY" id="bUQ-Za-4G3"/>
+                            <constraint firstItem="apl-dg-J9b" firstAttribute="centerX" secondItem="vEp-xn-INc" secondAttribute="centerX" id="guF-9S-Q2g"/>
+                            <constraint firstItem="vEp-xn-INc" firstAttribute="trailing" secondItem="apl-dg-J9b" secondAttribute="trailing" constant="87.5" id="iQ3-ol-U5p"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gbD-eJ-B9h"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="AaF-rw-6pT" id="JAz-fc-AHe"/>
+                        <outlet property="pickButton" destination="C43-cT-zbx" id="BMg-Hn-dOv"/>
+                        <segue destination="coQ-7J-WZI" kind="show" identifier="showVideo" id="385-BU-g2f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Khg-kC-PNb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="871.20000000000005" y="120.98950524737631"/>
+        </scene>
+        <!--Player View Controller-->
+        <scene sceneID="6II-dy-wEG">
+            <objects>
+                <viewController id="coQ-7J-WZI" customClass="PlayerViewController" customModule="Cubica" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BnB-xq-JYy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Max-ZC-vf3">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rUL-T2-NDQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="714"/>
+                                        <color key="backgroundColor" systemColor="darkTextColor"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0B-Dv-mwF">
+                                        <rect key="frame" x="0.0" y="714" width="414" height="30"/>
+                                        <state key="normal" title="Play"/>
+                                        <connections>
+                                            <action selector="videoPlayActionWithSender:" destination="coQ-7J-WZI" eventType="touchUpInside" id="6mM-NC-K3m"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMJ-C3-n2r">
+                                        <rect key="frame" x="0.0" y="744" width="414" height="30"/>
+                                        <state key="normal" title="Pause"/>
+                                        <connections>
+                                            <action selector="videoPauseActionWithSender:" destination="coQ-7J-WZI" eventType="touchUpInside" id="oMG-G4-MEu"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21C-Gj-cYu">
+                                        <rect key="frame" x="0.0" y="774" width="414" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="6r2-iA-xt5"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Save video"/>
+                                        <connections>
+                                            <action selector="saveVideoButtonTapped:" destination="coQ-7J-WZI" eventType="touchUpInside" id="0Ws-Rd-ODA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ebn-Px-mlO">
+                                <rect key="frame" x="158" y="431" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="coQ-7J-WZI" id="bMq-1S-gc0"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ELE-Kv-TCb"/>
+                        <color key="backgroundColor" name="rw-dark"/>
+                        <constraints>
+                            <constraint firstItem="Max-ZC-vf3" firstAttribute="top" secondItem="ELE-Kv-TCb" secondAttribute="top" id="HO5-JR-fxf"/>
+                            <constraint firstItem="Max-ZC-vf3" firstAttribute="leading" secondItem="ELE-Kv-TCb" secondAttribute="leading" id="RYm-dX-gts"/>
+                            <constraint firstItem="ELE-Kv-TCb" firstAttribute="trailing" secondItem="Max-ZC-vf3" secondAttribute="trailing" id="alP-FA-aUD"/>
+                            <constraint firstItem="ELE-Kv-TCb" firstAttribute="bottom" secondItem="Max-ZC-vf3" secondAttribute="bottom" id="fjb-kw-mwF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zkq-Kt-GRt"/>
+                    <connections>
+                        <outlet property="btnVideoPlay" destination="N0B-Dv-mwF" id="MeH-dC-eD0"/>
+                        <outlet property="pauseBtn" destination="HMJ-C3-n2r" id="coe-jW-XQn"/>
+                        <outlet property="txtField" destination="Ebn-Px-mlO" id="jNz-Qj-FCw"/>
+                        <outlet property="videoView" destination="rUL-T2-NDQ" id="giN-Qw-0dq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qB6-Uj-36g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1660" y="120.98950524737631"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qLt-3T-czK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Pi-KD-SoD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5Kd-sk-VZs">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" name="rw-dark"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HaI-sF-Cn0" kind="relationship" relationship="rootViewController" id="oTe-ce-DaZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vX3-Ld-Mso" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-68" y="120.98950524737631"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="rw-dark">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="rw-light">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
